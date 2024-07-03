@@ -13,6 +13,8 @@
 		CAE26F302C350D74006FFA90 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAE26F2F2C350D74006FFA90 /* Preview Assets.xcassets */; };
 		CAE26F392C350DCD006FFA90 /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE26F382C350DCD006FFA90 /* Webservice.swift */; };
 		CAE26F3C2C350F10006FFA90 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE26F3B2C350F10006FFA90 /* Order.swift */; };
+		CAE26F3F2C351A30006FFA90 /* CoffeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE26F3E2C351A30006FFA90 /* CoffeeViewModel.swift */; };
+		CAE26F422C3529DC006FFA90 /* NumberFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE26F412C3529DC006FFA90 /* NumberFormatter+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		CAE26F2F2C350D74006FFA90 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CAE26F382C350DCD006FFA90 /* Webservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
 		CAE26F3B2C350F10006FFA90 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		CAE26F3E2C351A30006FFA90 /* CoffeeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeViewModel.swift; sourceTree = "<group>"; };
+		CAE26F412C3529DC006FFA90 /* NumberFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +60,11 @@
 			isa = PBXGroup;
 			children = (
 				CAE26F282C350D73006FFA90 /* HelloCoffeeApp.swift */,
-				CAE26F2A2C350D73006FFA90 /* ContentView.swift */,
+				CAE26F3D2C351785006FFA90 /* Views */,
 				CAE26F3A2C350F03006FFA90 /* Models */,
 				CAE26F372C350D98006FFA90 /* Services */,
 				CAE26F362C350D91006FFA90 /* ViewModels */,
+				CAE26F402C35298B006FFA90 /* Extension */,
 				CAE26F2C2C350D74006FFA90 /* Assets.xcassets */,
 				CAE26F2E2C350D74006FFA90 /* Preview Content */,
 			);
@@ -77,6 +82,7 @@
 		CAE26F362C350D91006FFA90 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				CAE26F3E2C351A30006FFA90 /* CoffeeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -95,6 +101,22 @@
 				CAE26F3B2C350F10006FFA90 /* Order.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		CAE26F3D2C351785006FFA90 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CAE26F2A2C350D73006FFA90 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CAE26F402C35298B006FFA90 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CAE26F412C3529DC006FFA90 /* NumberFormatter+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,8 +191,10 @@
 			files = (
 				CAE26F2B2C350D73006FFA90 /* ContentView.swift in Sources */,
 				CAE26F292C350D73006FFA90 /* HelloCoffeeApp.swift in Sources */,
+				CAE26F3F2C351A30006FFA90 /* CoffeeViewModel.swift in Sources */,
 				CAE26F3C2C350F10006FFA90 /* Order.swift in Sources */,
 				CAE26F392C350DCD006FFA90 /* Webservice.swift in Sources */,
+				CAE26F422C3529DC006FFA90 /* NumberFormatter+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

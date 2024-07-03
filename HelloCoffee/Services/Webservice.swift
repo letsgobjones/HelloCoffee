@@ -22,7 +22,7 @@ class Webservice {
     
     //https://island-bramble.glitch.me/test/orders
     
-    guard let url = URL(string: "https://island-bramble.glitch.me/test/orders") else {
+    guard let url = URL(string: "https://island-bramble.glitch.me/orders") else {
       throw NetworkError.invalidURL
     }
     
