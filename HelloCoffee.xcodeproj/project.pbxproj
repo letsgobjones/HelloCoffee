@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CAA033BB2C365CFF001A2E77 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA033BA2C365CFF001A2E77 /* AppEnvironment.swift */; };
+		CAA033C32C366C9C001A2E77 /* HelloCoffeeEndToEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA033C22C366C9C001A2E77 /* HelloCoffeeEndToEndTests.swift */; };
 		CAE26F292C350D73006FFA90 /* HelloCoffeeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE26F282C350D73006FFA90 /* HelloCoffeeApp.swift */; };
 		CAE26F2B2C350D73006FFA90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE26F2A2C350D73006FFA90 /* ContentView.swift */; };
 		CAE26F2D2C350D74006FFA90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAE26F2C2C350D74006FFA90 /* Assets.xcassets */; };
@@ -19,8 +20,20 @@
 		CAE26F442C35349F006FFA90 /* OrderCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE26F432C35349F006FFA90 /* OrderCellView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		CAA033C62C366C9C001A2E77 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CAE26F1D2C350D73006FFA90 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CAE26F242C350D73006FFA90;
+			remoteInfo = HelloCoffee;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		CAA033BA2C365CFF001A2E77 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		CAA033C02C366C9C001A2E77 /* HelloCoffeeEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloCoffeeEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAA033C22C366C9C001A2E77 /* HelloCoffeeEndToEndTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloCoffeeEndToEndTests.swift; sourceTree = "<group>"; };
 		CAE26F252C350D73006FFA90 /* HelloCoffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloCoffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAE26F282C350D73006FFA90 /* HelloCoffeeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloCoffeeApp.swift; sourceTree = "<group>"; };
 		CAE26F2A2C350D73006FFA90 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,6 +47,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CAA033BD2C366C9C001A2E77 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CAE26F222C350D73006FFA90 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -52,10 +72,19 @@
 			path = Utlis;
 			sourceTree = "<group>";
 		};
+		CAA033C12C366C9C001A2E77 /* HelloCoffeeEndToEndTests */ = {
+			isa = PBXGroup;
+			children = (
+				CAA033C22C366C9C001A2E77 /* HelloCoffeeEndToEndTests.swift */,
+			);
+			path = HelloCoffeeEndToEndTests;
+			sourceTree = "<group>";
+		};
 		CAE26F1C2C350D73006FFA90 = {
 			isa = PBXGroup;
 			children = (
 				CAE26F272C350D73006FFA90 /* HelloCoffee */,
+				CAA033C12C366C9C001A2E77 /* HelloCoffeeEndToEndTests */,
 				CAE26F262C350D73006FFA90 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				CAE26F252C350D73006FFA90 /* HelloCoffee.app */,
+				CAA033C02C366C9C001A2E77 /* HelloCoffeeEndToEndTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -136,6 +166,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		CAA033BF2C366C9C001A2E77 /* HelloCoffeeEndToEndTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CAA033C82C366C9C001A2E77 /* Build configuration list for PBXNativeTarget "HelloCoffeeEndToEndTests" */;
+			buildPhases = (
+				CAA033BC2C366C9C001A2E77 /* Sources */,
+				CAA033BD2C366C9C001A2E77 /* Frameworks */,
+				CAA033BE2C366C9C001A2E77 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CAA033C72C366C9C001A2E77 /* PBXTargetDependency */,
+			);
+			name = HelloCoffeeEndToEndTests;
+			productName = HelloCoffeeEndToEndTests;
+			productReference = CAA033C02C366C9C001A2E77 /* HelloCoffeeEndToEndTests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		CAE26F242C350D73006FFA90 /* HelloCoffee */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CAE26F332C350D74006FFA90 /* Build configuration list for PBXNativeTarget "HelloCoffee" */;
@@ -163,6 +211,10 @@
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
+					CAA033BF2C366C9C001A2E77 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = CAE26F242C350D73006FFA90;
+					};
 					CAE26F242C350D73006FFA90 = {
 						CreatedOnToolsVersion = 15.4;
 					};
@@ -182,11 +234,19 @@
 			projectRoot = "";
 			targets = (
 				CAE26F242C350D73006FFA90 /* HelloCoffee */,
+				CAA033BF2C366C9C001A2E77 /* HelloCoffeeEndToEndTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CAA033BE2C366C9C001A2E77 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CAE26F232C350D73006FFA90 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -199,6 +259,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CAA033BC2C366C9C001A2E77 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAA033C32C366C9C001A2E77 /* HelloCoffeeEndToEndTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CAE26F212C350D73006FFA90 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -216,7 +284,49 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		CAA033C72C366C9C001A2E77 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CAE26F242C350D73006FFA90 /* HelloCoffee */;
+			targetProxy = CAA033C62C366C9C001A2E77 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		CAA033C92C366C9C001A2E77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YU5RM84NC9;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.letsgobjones.HelloCoffeeEndToEndTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HelloCoffee;
+			};
+			name = Debug;
+		};
+		CAA033CA2C366C9C001A2E77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YU5RM84NC9;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.letsgobjones.HelloCoffeeEndToEndTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HelloCoffee;
+			};
+			name = Release;
+		};
 		CAE26F312C350D74006FFA90 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -397,6 +507,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CAA033C82C366C9C001A2E77 /* Build configuration list for PBXNativeTarget "HelloCoffeeEndToEndTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CAA033C92C366C9C001A2E77 /* Debug */,
+				CAA033CA2C366C9C001A2E77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CAE26F202C350D73006FFA90 /* Build configuration list for PBXProject "HelloCoffee" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
