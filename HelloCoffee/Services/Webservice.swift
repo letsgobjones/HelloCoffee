@@ -8,21 +8,26 @@
 import Foundation
 
 
+enum NetworkError: Error {
+  case invalidURL
+  case invalidRequest
+  case invalidResponse
+  case decodingError
+}
+
 class Webservice {
   
-  enum NetworkError: Error {
-    case invalidURL
-    case invalidRequest
-    case invalidResponse
-    case decodingError
+  private var baseURL: URL
+  
+  init(baseURL: URL) {
+    self.baseURL = baseURL
   }
   
-
   func getOrders() async throws ->  [Order] {
     
     //https://island-bramble.glitch.me/test/orders
     
-    guard let url = URL(string: "https://island-bramble.glitch.me/orders") else {
+    guard let url = URL(string: Endpoints.allOrders.path, relativeTo: baseURL) else {
       throw NetworkError.invalidURL
     }
     

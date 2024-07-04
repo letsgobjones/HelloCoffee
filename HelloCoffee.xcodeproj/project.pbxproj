@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CAA033BB2C365CFF001A2E77 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA033BA2C365CFF001A2E77 /* AppEnvironment.swift */; };
 		CAE26F292C350D73006FFA90 /* HelloCoffeeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE26F282C350D73006FFA90 /* HelloCoffeeApp.swift */; };
 		CAE26F2B2C350D73006FFA90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE26F2A2C350D73006FFA90 /* ContentView.swift */; };
 		CAE26F2D2C350D74006FFA90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAE26F2C2C350D74006FFA90 /* Assets.xcassets */; };
@@ -15,9 +16,11 @@
 		CAE26F3C2C350F10006FFA90 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE26F3B2C350F10006FFA90 /* Order.swift */; };
 		CAE26F3F2C351A30006FFA90 /* CoffeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE26F3E2C351A30006FFA90 /* CoffeeViewModel.swift */; };
 		CAE26F422C3529DC006FFA90 /* NumberFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE26F412C3529DC006FFA90 /* NumberFormatter+Extension.swift */; };
+		CAE26F442C35349F006FFA90 /* OrderCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE26F432C35349F006FFA90 /* OrderCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CAA033BA2C365CFF001A2E77 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		CAE26F252C350D73006FFA90 /* HelloCoffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloCoffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAE26F282C350D73006FFA90 /* HelloCoffeeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloCoffeeApp.swift; sourceTree = "<group>"; };
 		CAE26F2A2C350D73006FFA90 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -27,6 +30,7 @@
 		CAE26F3B2C350F10006FFA90 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		CAE26F3E2C351A30006FFA90 /* CoffeeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeViewModel.swift; sourceTree = "<group>"; };
 		CAE26F412C3529DC006FFA90 /* NumberFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Extension.swift"; sourceTree = "<group>"; };
+		CAE26F432C35349F006FFA90 /* OrderCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +44,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CAA033B92C365CDD001A2E77 /* Utlis */ = {
+			isa = PBXGroup;
+			children = (
+				CAA033BA2C365CFF001A2E77 /* AppEnvironment.swift */,
+			);
+			path = Utlis;
+			sourceTree = "<group>";
+		};
 		CAE26F1C2C350D73006FFA90 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				CAE26F282C350D73006FFA90 /* HelloCoffeeApp.swift */,
+				CAA033B92C365CDD001A2E77 /* Utlis */,
 				CAE26F3D2C351785006FFA90 /* Views */,
 				CAE26F3A2C350F03006FFA90 /* Models */,
 				CAE26F372C350D98006FFA90 /* Services */,
@@ -107,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				CAE26F2A2C350D73006FFA90 /* ContentView.swift */,
+				CAE26F432C35349F006FFA90 /* OrderCellView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -190,10 +204,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAE26F2B2C350D73006FFA90 /* ContentView.swift in Sources */,
+				CAE26F442C35349F006FFA90 /* OrderCellView.swift in Sources */,
 				CAE26F292C350D73006FFA90 /* HelloCoffeeApp.swift in Sources */,
 				CAE26F3F2C351A30006FFA90 /* CoffeeViewModel.swift in Sources */,
 				CAE26F3C2C350F10006FFA90 /* Order.swift in Sources */,
 				CAE26F392C350DCD006FFA90 /* Webservice.swift in Sources */,
+				CAA033BB2C365CFF001A2E77 /* AppEnvironment.swift in Sources */,
 				CAE26F422C3529DC006FFA90 /* NumberFormatter+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

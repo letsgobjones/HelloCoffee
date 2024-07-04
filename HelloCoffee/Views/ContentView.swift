@@ -26,29 +26,7 @@ struct ContentView: View {
 }
 
 #Preview {
-  ContentView().environmentObject(CoffeeViewModel(webservice: Webservice()))
-}
+  var config = Configuration()
+  ContentView().environmentObject(CoffeeViewModel(webservice: Webservice(baseURL: config.environment.baseURL)))
 
-
-
-
-struct OrderCellView: View {
-  let order: Order
-  var body: some View {
-    HStack {
-      VStack(alignment: .leading) {
-        Text(order.name).accessibilityIdentifier("orderNameText")
-          .fontWeight(.bold)
-        Text("\(order.coffeeName) (\(order.size.rawValue))")
-          .accessibilityIdentifier("coffeenameAndSizeText")
-          .opacity(0.5)
-      }
-      Spacer()
-      
-      Text(order.total as NSNumber, formatter: NumberFormatter.currency)
-        .accessibilityIdentifier("coffeePriceText")
-       
-      
-    }
-  }
 }

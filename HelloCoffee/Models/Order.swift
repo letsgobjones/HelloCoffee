@@ -23,3 +23,10 @@ struct Order: Codable, Identifiable, Hashable {
   var total: Double
   var size: CoffeeSize
 }
+
+
+extension Order {
+    static var example: Order {  
+        Order(id: 1, name: "John", coffeeName: "Cappuccino", total: 3.99, size: .medium)
+    }
+}
