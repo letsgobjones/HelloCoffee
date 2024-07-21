@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		CA5F861C2C4CF2E100D356B2 /* AddCoffieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5F861B2C4CF2E100D356B2 /* AddCoffieView.swift */; };
-		CA5F861E2C4CF4C200D356B2 /* Views+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5F861D2C4CF4C200D356B2 /* Views+Extension.swift */; };
+		CA5F861E2C4CF4C200D356B2 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5F861D2C4CF4C200D356B2 /* View+Extension.swift */; };
+		CA5F86202C4CF7DC00D356B2 /* AddCoffeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5F861F2C4CF7DC00D356B2 /* AddCoffeeViewModel.swift */; };
+		CA5F86222C4CFA3A00D356B2 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5F86212C4CFA3A00D356B2 /* String+Extensions.swift */; };
 		CAA033BB2C365CFF001A2E77 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA033BA2C365CFF001A2E77 /* AppEnvironment.swift */; };
 		CAA033C32C366C9C001A2E77 /* HelloCoffeeEndToEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA033C22C366C9C001A2E77 /* HelloCoffeeEndToEndTests.swift */; };
 		CAE26F292C350D73006FFA90 /* HelloCoffeeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE26F282C350D73006FFA90 /* HelloCoffeeApp.swift */; };
@@ -34,7 +36,9 @@
 
 /* Begin PBXFileReference section */
 		CA5F861B2C4CF2E100D356B2 /* AddCoffieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoffieView.swift; sourceTree = "<group>"; };
-		CA5F861D2C4CF4C200D356B2 /* Views+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views+Extension.swift"; sourceTree = "<group>"; };
+		CA5F861D2C4CF4C200D356B2 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		CA5F861F2C4CF7DC00D356B2 /* AddCoffeeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoffeeViewModel.swift; sourceTree = "<group>"; };
+		CA5F86212C4CFA3A00D356B2 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		CAA033BA2C365CFF001A2E77 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		CAA033C02C366C9C001A2E77 /* HelloCoffeeEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloCoffeeEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAA033C22C366C9C001A2E77 /* HelloCoffeeEndToEndTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloCoffeeEndToEndTests.swift; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				CAE26F3E2C351A30006FFA90 /* CoffeeViewModel.swift */,
+				CA5F861F2C4CF7DC00D356B2 /* AddCoffeeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -164,7 +169,8 @@
 			isa = PBXGroup;
 			children = (
 				CAE26F412C3529DC006FFA90 /* NumberFormatter+Extension.swift */,
-				CA5F861D2C4CF4C200D356B2 /* Views+Extension.swift */,
+				CA5F861D2C4CF4C200D356B2 /* View+Extension.swift */,
+				CA5F86212C4CFA3A00D356B2 /* String+Extensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -281,12 +287,14 @@
 				CAE26F442C35349F006FFA90 /* OrderCellView.swift in Sources */,
 				CAE26F292C350D73006FFA90 /* HelloCoffeeApp.swift in Sources */,
 				CAE26F3F2C351A30006FFA90 /* CoffeeViewModel.swift in Sources */,
+				CA5F86222C4CFA3A00D356B2 /* String+Extensions.swift in Sources */,
 				CAE26F3C2C350F10006FFA90 /* Order.swift in Sources */,
 				CAE26F392C350DCD006FFA90 /* Webservice.swift in Sources */,
-				CA5F861E2C4CF4C200D356B2 /* Views+Extension.swift in Sources */,
+				CA5F861E2C4CF4C200D356B2 /* View+Extension.swift in Sources */,
 				CA5F861C2C4CF2E100D356B2 /* AddCoffieView.swift in Sources */,
 				CAA033BB2C365CFF001A2E77 /* AppEnvironment.swift in Sources */,
 				CAE26F422C3529DC006FFA90 /* NumberFormatter+Extension.swift in Sources */,
+				CA5F86202C4CF7DC00D356B2 /* AddCoffeeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
