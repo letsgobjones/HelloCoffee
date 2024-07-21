@@ -8,12 +8,12 @@
 import Foundation
 
 enum Endpoints {
-  
-  case allOrders
+    case allOrders
   
   var path: String {
     switch self {
     case .allOrders:
+      // "/orders"
       return "/test/orders"
     }
   }
@@ -46,8 +46,10 @@ enum AppEnvironment {
   var baseURL: URL {
     switch self {
     case .dev:
+      // "https://dev.island-bramble.glitch.me"
       return URL(string: "https://island-bramble.glitch.me")!
     case .test:
+      // "https://test.island-bramble.glitch.me"
       return URL(string: "https://island-bramble.glitch.me")!
     }
   }
