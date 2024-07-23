@@ -8,10 +8,12 @@
 import Foundation
 
 
-
-struct AddCoffeeErrors {
-  var name: String = ""
-  var coffeeName: String = ""
-  var price: String = ""
   
-}
+  struct AddCoffeeErrors {
+    var name: String = ""
+    var coffeeName: String = ""
+    var price: String = ""
+    
+  }
+  
+  

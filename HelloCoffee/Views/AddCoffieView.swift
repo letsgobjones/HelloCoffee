@@ -14,6 +14,10 @@ struct AddCoffieView: View {
   @State private var coffeeSize: CoffeeSize = .medium
   @State private var errors: AddCoffeeErrors = AddCoffeeErrors()
   
+  
+  @EnvironmentObject private var model: CoffeeViewModel
+
+  
   var formIsValid: Bool {
     
     errors = AddCoffeeErrors()
@@ -34,10 +38,25 @@ struct AddCoffieView: View {
     } else if price.isLessThan(1) {
       errors.price = "Price must be greater than 0"
     }
-    
-      
       return errors.name.isEmpty && errors.coffeeName.isEmpty && errors.price.isEmpty
   }
+  
+  
+  
+  private func placeOrder() async {
+    let order = Order(name: name, coffeeName: coffeeName, total: Double(price) ?? 0, size: coffeeSize)
+    
+    
+    do {
+      try await model.placeOrder(order)
+    } catch {
+      print(error)
+    }
+  }
+  
+  
+  
+  
   
   
     var body: some View {
@@ -59,12 +78,11 @@ Text(errors.price).visable(errors.price.isNotEmpty).font(.caption)
         
         Button("Place Order") {
           if formIsValid {
-           //place the order
+            Task {
+              await placeOrder()
+              
+            }   
           }
-          
-          
-          
-          
         }.accessibilityIdentifier("placeOrderButton")
           .centerHorizontally()
         
