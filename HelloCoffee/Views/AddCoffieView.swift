@@ -13,16 +13,13 @@ struct AddCoffieView: View {
   @State private var price: String = ""
   @State private var coffeeSize: CoffeeSize = .medium
   @State private var errors: AddCoffeeErrors = AddCoffeeErrors()
-  
-  
+  @Environment(\.dismiss) private var dismiss
   @EnvironmentObject private var model: CoffeeViewModel
-
   
+  //This is Not a business rule
+  //This is jsut UI validation
   var formIsValid: Bool {
-    
     errors = AddCoffeeErrors()
-    //This is Not a business rule
-    //This is jsut UI validation
     if name.isEmpty {
       errors.name = "Name is required"
     }
@@ -38,28 +35,15 @@ struct AddCoffieView: View {
     } else if price.isLessThan(1) {
       errors.price = "Price must be greater than 0"
     }
-      return errors.name.isEmpty && errors.coffeeName.isEmpty && errors.price.isEmpty
-  }
-  
-  
-  
-  private func placeOrder() async {
-    let order = Order(name: name, coffeeName: coffeeName, total: Double(price) ?? 0, size: coffeeSize)
-    
-    
-    do {
-      try await model.placeOrder(order)
-    } catch {
-      print(error)
-    }
+    return errors.name.isEmpty && errors.coffeeName.isEmpty && errors.price.isEmpty
   }
   
   
   
   
   
-  
-    var body: some View {
+  var body: some View {
+    NavigationStack {
       Form {
         TextField("Name", text: $name).accessibilityIdentifier("name")
         Text(errors.name).visable(errors.name.isNotEmpty).font(.caption)
@@ -68,8 +52,8 @@ struct AddCoffieView: View {
         Text(errors.coffeeName).visable(errors.coffeeName.isNotEmpty).font(.caption)
         
         TextField("Price", text: $price).accessibilityIdentifier("price")
-Text(errors.price).visable(errors.price.isNotEmpty).font(.caption)
-
+        Text(errors.price).visable(errors.price.isNotEmpty).font(.caption)
+        
         Picker("Select size", selection: $coffeeSize) {
           ForEach(CoffeeSize.allCases, id: \.rawValue) { size in
             Text(size.rawValue).tag(size)
@@ -80,16 +64,39 @@ Text(errors.price).visable(errors.price.isNotEmpty).font(.caption)
           if formIsValid {
             Task {
               await placeOrder()
-              
-            }   
+            }
           }
         }.accessibilityIdentifier("placeOrderButton")
           .centerHorizontally()
-        
+      }
+      .navigationTitle("Add Coffee")
+      .toolbar {
+        ToolbarItem(placement: .topBarTrailing) {
+          
+          Button("Cancel") {
+            dismiss()
+          }.accessibilityIdentifier("cancelOrderButton")
+        }
       }
     }
+  }
 }
 
 #Preview {
+  NavigationStack {
     AddCoffieView()
+  }
+}
+
+
+extension AddCoffieView {
+  private func placeOrder() async {
+    let order = Order(name: name, coffeeName: coffeeName, total: Double(price) ?? 0, size: coffeeSize)
+    do {
+      try await model.placeOrder(order)
+      dismiss()
+    } catch {
+      print(error)
+    }
+  }
 }

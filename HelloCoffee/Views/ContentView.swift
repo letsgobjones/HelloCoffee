@@ -25,9 +25,11 @@ struct ContentView: View {
       }.task {
        await populateOrders()
       }
-      .sheet(isPresented: $isPresented, content: {
+   
+      .sheet(isPresented: $isPresented) {
         AddCoffieView()
-      })
+      }
+    
       .toolbar {
         ToolbarItem(placement: .topBarTrailing) {
           Button("Add New Order") {
@@ -46,11 +48,14 @@ struct ContentView: View {
 
 #Preview {
   // Configuration setup
-    var config = Configuration()
+  var config = Configuration()
   // Creating an instance of CoffeeViewModel for the preview
-    let coffeeViewModel = CoffeeViewModel(webservice: Webservice(baseURL: config.environment.baseURL))
+  let coffeeViewModel = CoffeeViewModel(webservice: Webservice(baseURL: config.environment.baseURL))
   // Returning the ContentView with the environment object set to the created CoffeeViewModel instance
-    return ContentView().environmentObject(coffeeViewModel)
+
+
+  return ContentView().environmentObject(coffeeViewModel)
+  
 }
 
 

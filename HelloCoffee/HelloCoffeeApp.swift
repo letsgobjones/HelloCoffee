@@ -18,10 +18,12 @@ struct HelloCoffeeApp: App {
     _model = StateObject(wrappedValue: CoffeeViewModel(webservice: webservice))
   }
   
-    var body: some Scene {
-      WindowGroup {
+  var body: some Scene {
+    WindowGroup {
+   
         ContentView()
           .environmentObject(model)
-      }
+      
     }
   }
+}
