@@ -46,25 +46,15 @@ final class when_adding_a_new_coffee_order: XCTestCase {
     
     //fill out the textfields
     
-//    app.textFields["name"].tap()
-//    app.textFields["name"].typeText("Brandon")
-//    
 coffeeNameTextField.tap()
     coffeeNameTextField.typeText("Espresso")
-    
-//    app.textFields["coffeeName"].tap()
-//    app.textFields["coffeeName"].typeText("Espresso")
-    
+ 
+  
     priceTextField.tap()
     priceTextField.typeText("2.50")
     
-    
-//    app.textFields["price"].tap()
-//    app.textFields["price"].typeText("2.50")
-    
-
-    
     coffeeSizePicker.buttons["Small"].tap()
+    
     //place the order
     app.buttons["placeOrderButton"].tap()
   }

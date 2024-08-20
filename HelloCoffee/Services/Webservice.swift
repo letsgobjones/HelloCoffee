@@ -23,6 +23,25 @@ class Webservice {
     self.baseURL = baseURL
   }
   
+  func deleteOrer(orderID: Int) async throws -> Order {
+    guard let url = URL(string: Endpoints.deleteOrder(orderID).path, relativeTo: baseURL) else {
+      throw NetworkError.invalidURL
+    }
+    
+    var request = URLRequest(url: url)
+    request.httpMethod = "DELETE"
+    
+    let (data, response) = try await URLSession.shared.data(for: request)
+    guard let httpResponse = response as? HTTPURLResponse,
+          httpResponse.statusCode == 200 else {
+      throw NetworkError.invalidResponse
+    }
+    
+    guard let deletedOrder = try? JSONDecoder().decode(Order.self, from: data) else {
+      throw NetworkError.decodingError
+    }
+    return deletedOrder
+  }
   
   
   func placeOrder(order: Order) async throws -> Order {
