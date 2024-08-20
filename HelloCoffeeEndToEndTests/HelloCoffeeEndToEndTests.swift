@@ -7,6 +7,66 @@
 
 import XCTest
 
+
+final class when_deleting_an_order: XCTestCase {
+  
+  private var app: XCUIApplication!
+  
+  override func setUp()  {
+    app = XCUIApplication()
+    continueAfterFailure = false
+    app.launchEnvironment = ["ENV": "TEST"]
+    app.launch()
+    
+    //go to place order screen
+    app.buttons["addNewOrderButton"].tap()
+    //fill out the textfields
+    
+    let nameTextField = app.textFields["name"]
+    let coffeeNameTextField = app.textFields["coffeeName"]
+    let priceTextField = app.textFields["price"]
+    let coffeeSizePicker = app.segmentedControls["coffeeSize"]
+    let placeOrderButton = app.buttons["placeOrderButton"]
+    
+    nameTextField.tap()
+    nameTextField.typeText("Brandon")
+    
+    
+    coffeeNameTextField.tap()
+    coffeeNameTextField.typeText("Hot Coffee")
+    
+    priceTextField.tap()
+    priceTextField.typeText("4.50")
+    
+    coffeeSizePicker.buttons["Large"].tap()
+    
+    //place the order
+    placeOrderButton.tap()
+  }
+  
+  
+  func test_should_delete_order_successfully() throws {
+    
+    let collectionViewsQuery = XCUIApplication().collectionViews
+    let cellsQuery = collectionViewsQuery.cells
+    let element = cellsQuery.children(matching: .other).element(boundBy: 1).children(matching: .other).element
+    element.swipeLeft()
+    collectionViewsQuery.buttons["Delete"].tap()
+    
+    let orderList = app.collectionViews["orderList"]
+    XCTAssertEqual(0, orderList.cells.count)
+  }
+  // TEAR DOWN FUNCTIONS AND THEN DELETES ALL ORDERS FROM THE TEST DATABASE
+  override func tearDown() async throws {
+      // Make this an async function to use 'await'
+      Task { // Start a new asynchronous task
+          guard let url = URL(string: "/test/clear-orders", relativeTo: URL(string: "https://island-bramble.glitch.me")!) else { return }
+          let (_, _) = try await URLSession.shared.data(from: url)
+      } // End of the asynchronous task
+  }
+}
+
+
 final class when_adding_a_new_coffee_order: XCTestCase {
   
  private var app: XCUIApplication!
@@ -56,7 +116,7 @@ coffeeNameTextField.tap()
     coffeeSizePicker.buttons["Small"].tap()
     
     //place the order
-    app.buttons["placeOrderButton"].tap()
+placeOrderButton.tap()
   }
   
   func test_should_display_coffee_order_in_list_successfully() throws {
