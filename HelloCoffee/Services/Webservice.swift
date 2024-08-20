@@ -23,8 +23,37 @@ class Webservice {
     self.baseURL = baseURL
   }
   
-  func deleteOrer(orderID: Int) async throws -> Order {
-    guard let url = URL(string: Endpoints.deleteOrder(orderID).path, relativeTo: baseURL) else {
+  
+  func updateOrder(_ order: Order) async throws -> Order {
+    
+    guard let orderId = order.id else {
+      throw NetworkError.invalidRequest
+    }
+    
+    guard let url = URL(string: Endpoints.updateOrder(orderId).path, relativeTo: baseURL) else {
+      throw NetworkError.invalidURL
+      
+    }
+    
+    var request = URLRequest(url: url)
+    request.httpMethod = "PUT"
+    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+    
+    let (data, response) = try await URLSession.shared.data(for: request)
+    guard let httpResponse = response as? HTTPURLResponse,
+          httpResponse.statusCode == 200 else {
+      throw NetworkError.invalidRequest
+    }
+    
+   guard let updatedOrder = try? JSONDecoder().decode(Order.self, from: data) else {
+     throw NetworkError.decodingError
+    }
+    return updatedOrder
+  }
+  
+  
+  func deleteOrder(orderId: Int) async throws -> Order {
+    guard let url = URL(string: Endpoints.deleteOrder(orderId).path, relativeTo: baseURL) else {
       throw NetworkError.invalidURL
     }
     
@@ -35,10 +64,12 @@ class Webservice {
     guard let httpResponse = response as? HTTPURLResponse,
           httpResponse.statusCode == 200 else {
       throw NetworkError.invalidResponse
+
     }
     
     guard let deletedOrder = try? JSONDecoder().decode(Order.self, from: data) else {
       throw NetworkError.decodingError
+    
     }
     return deletedOrder
   }

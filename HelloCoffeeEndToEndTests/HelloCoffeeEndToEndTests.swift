@@ -48,19 +48,24 @@ final class when_deleting_an_order: XCTestCase {
   func test_should_delete_order_successfully() throws {
     
     let collectionViewsQuery = XCUIApplication().collectionViews
+ 
     let cellsQuery = collectionViewsQuery.cells
     let element = cellsQuery.children(matching: .other).element(boundBy: 1).children(matching: .other).element
+    XCTAssertTrue(element.waitForExistence(timeout: 5.0))
     element.swipeLeft()
-    collectionViewsQuery.buttons["Delete"].tap()
+  
+    let deleteButton = collectionViewsQuery.buttons["Delete"]
+    XCTAssertTrue(deleteButton.waitForExistence(timeout: 5.0))
+    deleteButton.tap()
     
     let orderList = app.collectionViews["orderList"]
     XCTAssertEqual(0, orderList.cells.count)
-  }
+}
   // TEAR DOWN FUNCTIONS AND THEN DELETES ALL ORDERS FROM THE TEST DATABASE
   override func tearDown() async throws {
       // Make this an async function to use 'await'
       Task { // Start a new asynchronous task
-          guard let url = URL(string: "/test/clear-orders", relativeTo: URL(string: "https://island-bramble.glitch.me")!) else { return }
+          guard let url = URL(string: "/test/clear-orders", relativeTo: URL(string: "https://server-bjones.glitch.me")!) else { return }
           let (_, _) = try await URLSession.shared.data(from: url)
       } // End of the asynchronous task
   }
@@ -75,7 +80,7 @@ final class when_adding_a_new_coffee_order: XCTestCase {
     override func setUp() async throws {
         // Make this an async function to use 'await'
         Task { // Start a new asynchronous task
-            guard let url = URL(string: "/test/clear-orders", relativeTo: URL(string: "https://island-bramble.glitch.me")!) else { return }
+            guard let url = URL(string: "/test/clear-orders", relativeTo: URL(string: "https://server-bjones.glitch.me")!) else { return }
             let (_, _) = try await URLSession.shared.data(from: url)
         } // End of the asynchronous task
     }
@@ -129,7 +134,7 @@ placeOrderButton.tap()
   override func tearDown() async throws {
       // Make this an async function to use 'await'
       Task { // Start a new asynchronous task
-          guard let url = URL(string: "/test/clear-orders", relativeTo: URL(string: "https://island-bramble.glitch.me")!) else { return }
+          guard let url = URL(string: "/test/clear-orders", relativeTo: URL(string: "https://server-bjones.glitch.me")!) else { return }
           let (_, _) = try await URLSession.shared.data(from: url)
       } // End of the asynchronous task
   }

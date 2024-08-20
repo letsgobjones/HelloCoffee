@@ -11,7 +11,7 @@ enum Endpoints {
     case allOrders
   case placeOrder
   case deleteOrder(Int)
-  
+  case updateOrder(Int)
   var path: String {
     switch self {
     case .allOrders:
@@ -21,7 +21,10 @@ enum Endpoints {
       return "/test/new-order"
       
     case .deleteOrder(let orderId):
-      return "/test/order/\(orderId)"
+      return "/test/orders/\(orderId)"
+      
+    case .updateOrder(let orderId):
+      return "/test/orders/\(orderId)"
     }
   }
 }
@@ -43,9 +46,6 @@ struct Configuration {
 }
 
 
-
-
-
 enum AppEnvironment {
   case dev
   case test
@@ -54,10 +54,10 @@ enum AppEnvironment {
     switch self {
     case .dev:
       // "https://dev.island-bramble.glitch.me"
-      return URL(string: "https://island-bramble.glitch.me")!
+      return URL(string: "https://server-bjones.glitch.me")!
     case .test:
       // "https://test.island-bramble.glitch.me"
-      return URL(string: "https://island-bramble.glitch.me")!
+      return URL(string: "https://server-bjones.glitch.me")!
     }
   }
 }

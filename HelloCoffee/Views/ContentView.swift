@@ -84,7 +84,7 @@ extension ContentView {
       }
       Task {
         do {
-          try await model.deletedOrder(orderId)
+          try await model.deleteOrder(orderId)
         } catch {
           print(error)
         }
