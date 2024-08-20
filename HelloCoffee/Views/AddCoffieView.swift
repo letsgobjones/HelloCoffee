@@ -59,6 +59,7 @@ struct AddCoffieView: View {
             Text(size.rawValue).tag(size)
           }
         }.pickerStyle(.segmented)
+          .accessibilityIdentifier("coffeeSize")
         
         Button("Place Order") {
           if formIsValid {
