@@ -13,6 +13,7 @@ struct OrderDetailView: View {
   
   let orderId: Int
   @EnvironmentObject private var model: CoffeeViewModel
+  @Environment(\.dismiss) private var dismiss
   @State private var isPresented: Bool = false
     var body: some View {
       VStack {
@@ -35,7 +36,10 @@ struct OrderDetailView: View {
             HStack {
               Spacer()
               Button("Delete Order" , role: .destructive) {
-                
+                Task {
+                  await deleteOrder()
+                  dismiss()
+                }
               }.accessibilityIdentifier("deleteOrderButton")
               
               Button("Edit Order") {
@@ -67,4 +71,16 @@ struct OrderDetailView: View {
 
 
   return OrderDetailView(orderId: Order.example.id ?? 1).environmentObject(coffeeViewModel)
+}
+
+
+
+extension OrderDetailView {
+  private func deleteOrder() async {
+    do {
+      try await model.deleteOrder(orderId)
+    } catch {
+      print(error)
+    }
+  }
 }
