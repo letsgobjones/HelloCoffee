@@ -13,6 +13,7 @@
 		CA5F86222C4CFA3A00D356B2 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5F86212C4CFA3A00D356B2 /* String+Extensions.swift */; };
 		CAA033BB2C365CFF001A2E77 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA033BA2C365CFF001A2E77 /* AppEnvironment.swift */; };
 		CAA033C32C366C9C001A2E77 /* HelloCoffeeEndToEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA033C22C366C9C001A2E77 /* HelloCoffeeEndToEndTests.swift */; };
+		CAD92E2B2C7585AC003AC086 /* OrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD92E2A2C7585AC003AC086 /* OrderDetailView.swift */; };
 		CAE26F292C350D73006FFA90 /* HelloCoffeeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE26F282C350D73006FFA90 /* HelloCoffeeApp.swift */; };
 		CAE26F2B2C350D73006FFA90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE26F2A2C350D73006FFA90 /* ContentView.swift */; };
 		CAE26F2D2C350D74006FFA90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAE26F2C2C350D74006FFA90 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 		CAA033BA2C365CFF001A2E77 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		CAA033C02C366C9C001A2E77 /* HelloCoffeeEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloCoffeeEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAA033C22C366C9C001A2E77 /* HelloCoffeeEndToEndTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloCoffeeEndToEndTests.swift; sourceTree = "<group>"; };
+		CAD92E2A2C7585AC003AC086 /* OrderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailView.swift; sourceTree = "<group>"; };
 		CAE26F252C350D73006FFA90 /* HelloCoffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloCoffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAE26F282C350D73006FFA90 /* HelloCoffeeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloCoffeeApp.swift; sourceTree = "<group>"; };
 		CAE26F2A2C350D73006FFA90 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				CAE26F2A2C350D73006FFA90 /* ContentView.swift */,
 				CAE26F432C35349F006FFA90 /* OrderCellView.swift */,
 				CA5F861B2C4CF2E100D356B2 /* AddCoffieView.swift */,
+				CAD92E2A2C7585AC003AC086 /* OrderDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				CA5F86222C4CFA3A00D356B2 /* String+Extensions.swift in Sources */,
 				CAE26F3C2C350F10006FFA90 /* Order.swift in Sources */,
 				CAE26F392C350DCD006FFA90 /* Webservice.swift in Sources */,
+				CAD92E2B2C7585AC003AC086 /* OrderDetailView.swift in Sources */,
 				CA5F861E2C4CF4C200D356B2 /* View+Extension.swift in Sources */,
 				CA5F861C2C4CF2E100D356B2 /* AddCoffieView.swift in Sources */,
 				CAA033BB2C365CFF001A2E77 /* AppEnvironment.swift in Sources */,

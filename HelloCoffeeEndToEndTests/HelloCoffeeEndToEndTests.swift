@@ -65,7 +65,7 @@ final class when_deleting_an_order: XCTestCase {
   override func tearDown() async throws {
       // Make this an async function to use 'await'
       Task { // Start a new asynchronous task
-          guard let url = URL(string: "/test/clear-orders", relativeTo: URL(string: "https://server-bjones.glitch.me")!) else { return }
+          guard let url = URL(string: "/test/clear-orders", relativeTo: URL(string: "https://hello-coffee-letsgobjones.glitch.me")!) else { return }
           let (_, _) = try await URLSession.shared.data(from: url)
       } // End of the asynchronous task
   }
@@ -80,7 +80,7 @@ final class when_adding_a_new_coffee_order: XCTestCase {
     override func setUp() async throws {
         // Make this an async function to use 'await'
         Task { // Start a new asynchronous task
-            guard let url = URL(string: "/test/clear-orders", relativeTo: URL(string: "https://server-bjones.glitch.me")!) else { return }
+            guard let url = URL(string: "/test/clear-orders", relativeTo: URL(string: "https://hello-coffee-letsgobjones.glitch.me")!) else { return }
             let (_, _) = try await URLSession.shared.data(from: url)
         } // End of the asynchronous task
     }
@@ -134,7 +134,7 @@ placeOrderButton.tap()
   override func tearDown() async throws {
       // Make this an async function to use 'await'
       Task { // Start a new asynchronous task
-          guard let url = URL(string: "/test/clear-orders", relativeTo: URL(string: "https://server-bjones.glitch.me")!) else { return }
+          guard let url = URL(string: "/test/clear-orders", relativeTo: URL(string: "https://hello-coffee-letsgobjones.glitch.me")!) else { return }
           let (_, _) = try await URLSession.shared.data(from: url)
       } // End of the asynchronous task
   }

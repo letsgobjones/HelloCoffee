@@ -17,6 +17,18 @@ class CoffeeViewModel: ObservableObject {
     self.webservice = webservice
   }
   
+  
+  func orderById(_ id: Int) -> Order? {
+    
+    guard let index = orders.firstIndex(where: { $0.id == id }) else {
+     return nil
+      
+    }
+    return orders[index]
+  }
+  
+  
+  
   func populateOrders() async throws{
     orders = try await webservice.getOrders()
   }

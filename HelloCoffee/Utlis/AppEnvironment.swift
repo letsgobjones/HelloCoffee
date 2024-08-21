@@ -54,10 +54,10 @@ enum AppEnvironment {
     switch self {
     case .dev:
       // "https://dev.island-bramble.glitch.me"
-      return URL(string: "https://server-bjones.glitch.me")!
+      return URL(string: "https://hello-coffee-letsgobjones.glitch.me")!
     case .test:
       // "https://test.island-bramble.glitch.me"
-      return URL(string: "https://server-bjones.glitch.me")!
+      return URL(string: "https://hello-coffee-letsgobjones.glitch.me")!
     }
   }
 }
