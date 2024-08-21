@@ -36,3 +36,14 @@ extension Order {
         Order(id: 1, name: "John", coffeeName: "Cappuccino", total: 3.99, size: .medium)
     }
 }
+
+
+
+extension Order {
+    static var examples: [Order] {
+        [
+            Order(id: 1, name: "John", coffeeName: "Cappuccino", total: 3.99, size: .medium),
+            Order(id: 2, name: "Mary", coffeeName: "Latte", total: 7.99, size: .large)
+        ]
+    }
+}

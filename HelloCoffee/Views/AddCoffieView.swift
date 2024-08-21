@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct AddCoffieView: View {
+  
+  var order: Order? = nil
   @State private var name: String = ""
   @State private var coffeeName: String = ""
   @State private var price: String = ""
@@ -61,16 +63,21 @@ struct AddCoffieView: View {
         }.pickerStyle(.segmented)
           .accessibilityIdentifier("coffeeSize")
         
-        Button("Place Order") {
+        Button(order != nil ? "Update Order" : "Place Order") {
           if formIsValid {
             Task {
-              await placeOrder()
+              await saveOrUpdateOrder()
             }
           }
         }.accessibilityIdentifier("placeOrderButton")
           .centerHorizontally()
       }
-      .navigationTitle("Add Coffee")
+      .navigationTitle(order == nil ? "Add Order" : "Update Order")
+      .onAppear{
+        populateExistingOrder()
+      }
+      
+      
       .toolbar {
         ToolbarItem(placement: .topBarTrailing) {
           
@@ -91,8 +98,8 @@ struct AddCoffieView: View {
 
 
 extension AddCoffieView {
-  private func placeOrder() async {
-    let order = Order(name: name, coffeeName: coffeeName, total: Double(price) ?? 0, size: coffeeSize)
+  private func placeOrder(_ order: Order) async {
+
     do {
       try await model.placeOrder(order)
       dismiss()
@@ -100,4 +107,45 @@ extension AddCoffieView {
       print(error)
     }
   }
+}
+
+
+extension AddCoffieView {
+  private func updateOrder(_ order: Order) async {
+    do {
+      try await model.updateOrder(order)
+    } catch {
+      print(error)
+    }
+  }
+}
+
+
+
+extension AddCoffieView {
+  private func populateExistingOrder() {
+    if let order = order {
+      name = order.name
+      coffeeName = order.coffeeName
+      price = String(order.total)
+      coffeeSize = order.size
+    }
+  }
+}
+
+extension AddCoffieView {
+  private func saveOrUpdateOrder() async {
+    if let order {
+      var editOrder = order
+      editOrder.name = name
+      editOrder.total = Double(price) ?? 0
+      editOrder.coffeeName = coffeeName
+      editOrder.size = coffeeSize
+      await updateOrder(editOrder)
+    } else {
+      let order = Order(name: name, coffeeName: coffeeName, total: Double(price) ?? 0, size: coffeeSize)
+      await placeOrder(order)
+    }
+    dismiss()
+    }
 }

@@ -46,7 +46,7 @@ struct OrderDetailView: View {
               
             }
           }.sheet(isPresented: $isPresented, content: {
-            AddCoffieView()
+            AddCoffieView(order: order)
           })
           
           
