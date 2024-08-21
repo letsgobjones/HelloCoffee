@@ -25,7 +25,7 @@ struct ContentView: View {
                 OrderCellView(order: order)
               }
             }.onDelete(perform: deleteOrder)
-          }
+          }.accessibilityIdentifier("ordersList")
         }
       }
       .navigationDestination(for: Int.self, destination: { orderId in
@@ -50,25 +50,15 @@ struct ContentView: View {
   }
   }
 
-
-
-
-
-
 #Preview {
   // Configuration setup
   var config = Configuration()
   // Creating an instance of CoffeeViewModel for the preview
   let coffeeViewModel = CoffeeViewModel(webservice: Webservice(baseURL: config.environment.baseURL))
   // Returning the ContentView with the environment object set to the created CoffeeViewModel instance
-
-
   return ContentView().environmentObject(coffeeViewModel)
   
 }
-
-
-
 
 
 extension ContentView {
